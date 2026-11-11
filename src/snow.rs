@@ -3,7 +3,6 @@ use crate::hyprland::{
     MonitorRect, WindowRect, get_hyprland_windows, get_monitors_with_fullscreen_state,
     get_total_screen_bounds, spawn_event_listener,
 };
-use hyprland::shared::Address;
 use iced::widget::image::Handle as ImageHandle;
 use iced::mouse::Cursor;
 use iced::widget::canvas::{self, Canvas, Frame, Geometry, Path};
@@ -18,7 +17,7 @@ enum SnowState {
     Falling,
     Landed {
         melt_timer: f32,
-        window_addr: Option<Address>,
+        window_addr: Option<String>,
         offset_x: f32,
     },
 }
